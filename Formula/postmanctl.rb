@@ -2,29 +2,29 @@
 class Postmanctl < Formula
   desc ""
   homepage "https://github.com/kevinswiber/postmanctl"
-  version "1.0.0"
+  version "1.1.0"
   bottle :unneeded
 
+  if OS.mac?
+    url "https://github.com/kevinswiber/postmanctl/releases/download/v1.1.0/postmanctl_1.1.0_Darwin_x86_64.tar.gz"
+    sha256 "f5002aebb11fd23ff58622a873c01cc4afd65cb7fad0a5565598fb26ea2974db"
+  elsif OS.linux?
+    if Hardware::CPU.intel?
+      url "https://github.com/kevinswiber/postmanctl/releases/download/v1.1.0/postmanctl_1.1.0_Linux_x86_64.tar.gz"
+      sha256 "20b74180fad9d869f6c2e0a703dc2acbc70524ea08e9aa3bad5476fe2ca3afd8"
+    end
+  end
+  
   head do
     url "https://github.com/kevinswiber/postmanctl.git"
     depends_on "go"
-  end
-
-  if OS.mac?
-    url "https://github.com/kevinswiber/postmanctl/releases/download/v1.0.0/postmanctl_1.0.0_Darwin_x86_64.tar.gz"
-    sha256 "0eb5f410b2b04a3b278951808952ab7e3482cb69118a9a921ef66c8256051a99"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/kevinswiber/postmanctl/releases/download/v1.0.0/postmanctl_1.0.0_Linux_x86_64.tar.gz"
-      sha256 "243d30bb4cab2be6f69f69297219b4362a629ff02d87964666a391039e489ac0"
-    end
   end
 
   def install
     if head?
       system "go", "build", "./cmd/postmanctl"
     end
-
+    
     bin.install "postmanctl"
   end
 end
