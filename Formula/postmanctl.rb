@@ -2,16 +2,16 @@
 class Postmanctl < Formula
   desc ""
   homepage "https://github.com/kevinswiber/postmanctl"
-  version "1.1.4"
+  version "1.1.5"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/kevinswiber/postmanctl/releases/download/1.1.4/postmanctl_1.1.4_Darwin_x86_64.tar.gz"
-    sha256 "4215c394aae7a80b2def17b7da2c5f8cd04ad4fe34764dcc55fb793b196652b0"
+    url "https://github.com/kevinswiber/postmanctl/releases/download/v1.1.5/postmanctl_1.1.5_Darwin_x86_64.tar.gz"
+    sha256 "c1945778781bb0389a05018d5617bcc024835a9357e6930585afa645a3dea21f"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/kevinswiber/postmanctl/releases/download/1.1.4/postmanctl_1.1.4_Linux_x86_64.tar.gz"
-      sha256 "cccc9fe77aaba95fbd1bd8dabc717437c9cf2667233662cdb71617e1de7c18f6"
+      url "https://github.com/kevinswiber/postmanctl/releases/download/v1.1.5/postmanctl_1.1.5_Linux_x86_64.tar.gz"
+      sha256 "7fec73836f53fb568bcb60819fcf67d007f50bc6618301a6cbc92995e1e83e03"
     end
   end
   
